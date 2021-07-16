@@ -16,7 +16,18 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.server.ServerWorld;
 
-
+/*
+ * TODO: Implement the following:
+ *  [ ] TNT Drop: Drop a block of TNT at a designated spot
+ *  [ ] Power Laser: Self Explanitory
+ *  [ ] Stone Contact: Create a radius that eliminates all life and tarnishs trees and randomly ignites wood (Stone touches ground)
+ *  [X} Super Jump: Launch yourself in the direction you're looking (Requires to be on ground
+ *  [X] Punch: Create explosion at target, or 15 blocks away
+ *  [X] Ignite: Ignite block looking at
+ *      [ ] Ignite Entities as well
+ *
+ *
+ */
 public class PowerStoneUtils {
     /**
      * Simulates a punch by exploding the block at cursor no greater than 15 blocks, otherwise, explodes in air
@@ -42,6 +53,7 @@ public class PowerStoneUtils {
      */
     public static ActionResultType launch(LivingEntity user){
         Vector3d dir = user.getLookAngle();
+        if(!(user.isOnGround())) return ActionResultType.FAIL;
         user.setDeltaMovement(dir.x*3, dir.y*3, dir.z*3);
         return ActionResultType.SUCCESS;
     }

@@ -7,7 +7,7 @@ Project Status: Work in Progress
 Project To-Do's:
 - [x] Upload to GitHub
 - [x] Create all of the stone classes
-- [ ] Layout the plans for the Stones
+- [X] Layout the plans for the Stones
 - [ ] Finish the Stones
   - [ ] Power Stone
   - [ ] Space Stone

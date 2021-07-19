@@ -3,6 +3,7 @@ package com.hauteknits.infinitylib.item;
 import com.hauteknits.infinitylib.BaseMod;
 import com.hauteknits.infinitylib.stones.PowerStoneUtils;
 import com.hauteknits.infinitylib.stones.SpaceStoneUtils;
+import com.hauteknits.infinitylib.util.RTUtils;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -23,7 +24,7 @@ public class DebugWand extends Item {
     @Override
     public ActionResult<ItemStack> use(World p_77659_1_, PlayerEntity player, Hand p_77659_3_) {
         ItemStack is = player.getItemInHand(p_77659_3_);
-        ActionResultType r = SpaceStoneUtils.teleport(player, 80);
+        ActionResultType r = PowerStoneUtils.dropTNT(player, 40, 10);
         return new ActionResult(r, is);
     }
 }

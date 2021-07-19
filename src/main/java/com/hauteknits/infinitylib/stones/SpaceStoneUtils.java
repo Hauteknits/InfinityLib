@@ -1,5 +1,6 @@
 package com.hauteknits.infinitylib.stones;
 
+import com.hauteknits.infinitylib.util.RTUtils;
 import net.darkhax.bookshelf.util.EntityUtils;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.ActionResultType;
@@ -7,6 +8,17 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.RayTraceContext;
 
+/*
+ * TODO: Implement the following
+ *  [X] Teleport
+ *  [ ] Worm hole, create a 3d portal to the cursor location
+ *      **Depends on Waypoint Class
+ *  [ ] Waypoints
+ *      [X] Create Waypoint Class
+ *      [ ] Recall
+ *      [ ] Create
+ *  [ ] Direct Movement: Move in any direction
+ */
 public class SpaceStoneUtils {
 
     /**
@@ -16,10 +28,8 @@ public class SpaceStoneUtils {
      * @return Pass/fail ActionResultType
      */
 
-    //TODO: FIX raytrace
     public static ActionResultType teleport(LivingEntity user, double range){
-        BlockRayTraceResult rt = (BlockRayTraceResult) (EntityUtils.rayTrace(user, range, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.ANY));
-        BlockPos target = rt.getBlockPos();
+        BlockPos target = RTUtils.rayTraceBlocks(user, range, false);
         if(target == null) return ActionResultType.CONSUME;
         user.setPos(target.getX(),target.getY()+1, target.getZ());
         return ActionResultType.SUCCESS;

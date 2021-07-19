@@ -27,4 +27,4 @@ If you'd like to add new features to the library, please open an issue before su
 
 This library is licensed under the GNU General Public License v3, and by conveying a work based on the Library (using the library to make your mod), under GPLv3 clause 5(c), you must also license your mod under the GNU General Public License v3. No exceptions will be made, do not ask. [FAQs](https://github.com/Hauteknits/InfinityLib/blob/master/FAQ.md "FAQs")
 
-*Note: The above instructions are meant to inform you, comply with the text found in the License included with the code*
+*Note: The above instructions are meant to inform, and do not change the terms of the license, comply with the text found in the License included with the code*
